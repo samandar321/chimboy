@@ -82,9 +82,11 @@ export const getRelatedProducts = async (productId, limit = 4) => {
   await delay(500);
   const product = products.find((p) => p.id === Number(productId));
   if (!product) return [];
-  return products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, limit);
+  // Same-category items first, then fill with other products so the block is never empty.
+  const others = products.filter((p) => p.id !== product.id);
+  const sameCategory = others.filter((p) => p.category === product.category);
+  const rest = others.filter((p) => p.category !== product.category);
+  return [...sameCategory, ...rest].slice(0, limit);
 };
 
 export const getCategories = async () => {
