@@ -124,8 +124,7 @@
     "grandTotal": "Umumiy summa",
     "checkout": "Buyurtmani rasmiylashtirish",
     "empty": "Savatchangiz bo'sh",
-    "emptyMessage": "Hali hech narsa qo'shmadingiz. Xaridni boshlang!",
-    "freeDeliveryNote": "150 000 so'mdan yuqori buyurtmalarga bepul yetkazib berish"
+    "emptyMessage": "Hali hech narsa qo'shmadingiz. Xaridni boshlang!"
   },
   "checkout": {
     "title": "Buyurtmani rasmiylashtirish",

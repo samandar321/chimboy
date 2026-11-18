@@ -45,8 +45,7 @@ export default function Header() {
     <>
       {/* top strip — hidden on mobile to reclaim vertical space */}
       <div className="hidden bg-text text-white sm:block">
-        <div className="container-x flex h-9 items-center justify-between text-xs">
-          <span>{t('cart.freeDeliveryNote')}</span>
+        <div className="container-x flex h-9 items-center justify-end text-xs">
           <a href="tel:+998712001001" className="font-medium hover:text-accent">
             +998 71 200 10 01
           </a>
