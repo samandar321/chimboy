@@ -20,8 +20,10 @@ import { useWishlistStore } from '../store/wishlistStore';
 import { localized, applyDiscount } from '../utils/helpers';
 
 // Build weight variants from the product's real weight with proportional pricing.
+// Products with `fixedSize` come from the real price list and are sold in one size only.
 const buildVariants = (product) => {
   const base = product.weight;
+  if (product.fixedSize) return [{ weight: base, price: product.price, oldPrice: product.oldPrice }];
   const round = (n) => Math.max(500, Math.round(n / 500) * 500);
   const sizes = [...new Set([Math.round(base / 2), base, base * 2])].filter((s) => s >= 50);
   return sizes.map((w) => {
