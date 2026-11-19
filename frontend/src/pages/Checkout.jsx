@@ -16,6 +16,7 @@ import {
   isExpiry,
   isCvv,
 } from '../utils/helpers';
+import { createOrder } from '../services/orderService';
 
 const CITIES = ['Toshkent', 'Samarqand', 'Buxoro', 'Namangan', 'Andijon', "Farg'ona", 'Nukus', 'Termiz'];
 
@@ -39,6 +40,7 @@ export default function Checkout() {
   const [payment, setPayment] = useState('cash');
   const [card, setCard] = useState({ number: '', expiry: '', cvv: '' });
   const [agree, setAgree] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     if (items.length === 0 && !orderNumber) navigate('/cart');
@@ -68,12 +70,34 @@ export default function Checkout() {
     setStep(3);
   };
 
-  const placeOrder = () => {
+  const placeOrder = async () => {
     if (!agree) {
       toast.error(t('auth.agreeRequired'));
       return;
     }
     const num = generateOrderNumber();
+    setSubmitting(true);
+    try {
+      await createOrder({
+        orderNumber: num,
+        delivery,
+        payment, // card details are never sent
+        items: items.map((i) => ({
+          name: localized(i, 'name', 'uz'),
+          quantity: i.quantity,
+          price: i.price,
+        })),
+        subtotal: subtotal(),
+        deliveryFee: deliveryFee(),
+        discount: discountAmount(),
+        total: total(),
+      });
+    } catch {
+      toast.error(t('checkout.orderFailed'));
+      setSubmitting(false);
+      return;
+    }
+    setSubmitting(false);
     setOrderNumber(num);
     setTimeout(() => {
       clearCart();
@@ -367,7 +391,7 @@ export default function Checkout() {
                 <Button variant="outline" size="lg" onClick={() => setStep(2)}>
                   {t('common.back')}
                 </Button>
-                <Button size="lg" onClick={placeOrder}>
+                <Button size="lg" onClick={placeOrder} disabled={submitting}>
                   {t('checkout.placeOrder')}
                 </Button>
               </div>

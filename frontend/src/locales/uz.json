@@ -150,7 +150,8 @@
     "placeOrder": "Buyurtma berish",
     "orderSuccess": "Buyurtmangiz qabul qilindi!",
     "orderNumber": "Buyurtma raqami",
-    "smsConfirm": "Tez orada SMS orqali tasdiqlash xabarini olasiz."
+    "smsConfirm": "Tez orada SMS orqali tasdiqlash xabarini olasiz.",
+    "orderFailed": "Buyurtmani yuborib bo'lmadi. Iltimos, qayta urinib ko'ring."
   },
   "profile": {
     "dashboard": "Boshqaruv paneli",
