@@ -56,6 +56,16 @@ export default function ProductDetail() {
   const toggleWishlist = useWishlistStore((s) => s.toggleWishlist);
   const wishlisted = useWishlistStore((s) => (product ? s.items.includes(product.id) : false));
 
+  // Per-product page title for search engines and browser tabs.
+  useEffect(() => {
+    if (!product) return undefined;
+    const prev = document.title;
+    document.title = `${localized(product, 'name', lang)} — CHIMBOY`;
+    return () => {
+      document.title = prev;
+    };
+  }, [product, lang]);
+
   useEffect(() => {
     setLoading(true);
     window.scrollTo(0, 0);

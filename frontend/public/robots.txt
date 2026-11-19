@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /checkout
+Disallow: /profile
+Disallow: /wishlist
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+
+Sitemap: https://chimboy-rose.vercel.app/sitemap.xml
