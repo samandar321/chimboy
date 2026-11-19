@@ -138,10 +138,18 @@ export default function About() {
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
           {team.map((member, i) => (
             <Reveal key={member.id} delay={i * 0.08}>
-              <div className="rounded-2xl bg-surface p-5 text-center shadow-card">
-                <img src={member.avatar} alt={member.name} className="mx-auto mb-3 h-24 w-24 rounded-full object-cover" />
+              <div className="flex h-full flex-col items-center rounded-2xl bg-surface p-5 text-center shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <img
+                  src={member.avatar}
+                  alt={`${member.name} ${member.patronymic || ''}`.trim()}
+                  className="mb-4 h-24 w-24 rounded-full object-cover ring-4 ring-primary/15"
+                />
                 <h3 className="font-bold leading-tight">{member.name}</h3>
-                <p className="mt-1 text-sm text-muted">{localized(member, 'role', lang)}</p>
+                {member.patronymic && <p className="mt-0.5 text-sm text-muted">{member.patronymic}</p>}
+                <div className="min-h-3 flex-1" />
+                <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  {localized(member, 'role', lang)}
+                </span>
               </div>
             </Reveal>
           ))}

@@ -489,10 +489,10 @@ export const milestones = [
 ];
 
 export const team = [
-  { id: 1, name: 'Aziz Yo\'ldoshev', role_uz: 'Bosh direktor', role_ru: 'Генеральный директor', avatar: img('AY', '212121') },
-  { id: 2, name: 'Dilnoza Karimova', role_uz: 'Marketing rahbari', role_ru: 'Руководитель маркетинга', avatar: img('DK', '212121') },
-  { id: 3, name: 'Sherzod Aliyev', role_uz: 'Ishlab chiqarish rahbari', role_ru: 'Руководитель производства', avatar: img('SA', '212121') },
-  { id: 4, name: 'Madina Tosheva', role_uz: 'Sifat nazorati', role_ru: 'Контроль качества', avatar: img('MT', '212121') },
+  { id: 1, name: 'Rasulov Hudoyberdi', patronymic: 'Baxtiyorovich', role_uz: 'Bosh direktor', role_ru: 'Генеральный директор', avatar: img('RH', '212121') },
+  { id: 2, name: 'Hamidov Tuygun', patronymic: 'Taripovich', role_uz: 'Marketing rahbari', role_ru: 'Руководитель маркетинга', avatar: img('HT', '212121') },
+  { id: 3, name: 'Rasulov Hayitboy', patronymic: 'Abduganiyevich', role_uz: 'Ishlab chiqarish rahbari', role_ru: 'Руководитель производства', avatar: img('RH', '212121') },
+  { id: 4, name: 'Karimov Sarvar', patronymic: "Erkin o'g'li", role_uz: 'Sifat nazorati', role_ru: 'Контроль качества', avatar: img('KS', '212121') },
 ];
 
 export const certificates = [

@@ -62,11 +62,11 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin size={18} className="mt-0.5 shrink-0 text-primary" />
-              Toshkent, Bunyodkor ko'chasi 12
+              {t('company.address')}
             </li>
             <li className="flex items-center gap-2">
               <Phone size={18} className="shrink-0 text-primary" />
-              <a href="tel:+998712001001" className="hover:text-primary">+998 71 200 10 01</a>
+              <a href="tel:+998946336597" className="hover:text-primary">+998 94 633 65 97</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={18} className="shrink-0 text-primary" />

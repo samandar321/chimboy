@@ -87,7 +87,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs text-muted">{t('contact.phone')}</p>
-                  <a href="tel:+998712001001" className="font-semibold hover:text-primary">+998 71 200 10 01</a>
+                  <a href="tel:+998946336597" className="font-semibold hover:text-primary">+998 94 633 65 97</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -105,7 +105,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs text-muted">{t('contact.address')}</p>
-                  <p className="font-semibold">Toshkent, Bunyodkor ko'chasi 12</p>
+                  <p className="font-semibold">{t('company.address')}</p>
                 </div>
               </li>
             </ul>

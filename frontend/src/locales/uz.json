@@ -251,5 +251,8 @@
     "addedToWishlist": "Sevimlilarga qo'shildi",
     "removedFromWishlist": "Sevimlilardan o'chirildi",
     "loginRequired": "Iltimos, avval tizimga kiring"
+  },
+  "company": {
+    "address": "Toshkent sh., Olmazor tumani, Sag'bon-Oqtepa 2-tor, 1-berk ko'chasi, 1-uy"
   }
 }

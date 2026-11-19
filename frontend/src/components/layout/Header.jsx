@@ -46,8 +46,8 @@ export default function Header() {
       {/* top strip — hidden on mobile to reclaim vertical space */}
       <div className="hidden bg-text text-white sm:block">
         <div className="container-x flex h-9 items-center justify-end text-xs">
-          <a href="tel:+998712001001" className="font-medium hover:text-accent">
-            +998 71 200 10 01
+          <a href="tel:+998946336597" className="font-medium hover:text-accent">
+            +998 94 633 65 97
           </a>
         </div>
       </div>
